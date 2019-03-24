@@ -1,3 +1,7 @@
+
+window.onload = function(){
+  document.getElementById("calc-submit").addEventListener('click', updateAnswer());
+}
 /*Calculate daily water usage in gallons given:
 Toilet flushes in a day (1.5 gallon times flushes)
 Total time spent showering in a day (2.5 gallons per minute, times minutes)
@@ -26,5 +30,21 @@ function calculateWeeklyUsageLitres(flushes, shower, bath, water, laundry, dish)
 //Calculate how many times more water you use as opposed to an average African.
 //The average African uses 35 litres, or 9.246051 gallons of water a day
 function compareToAfrica(weeklyUsageGallons) {
-  return weeklyUsageGallons / (9.246051*7)
+  return weeklyUsageGallons / (9.246051*7);
+}
+
+function updateAnswer () {
+  var flushes = document.getElementById('toilets').value;
+  var shower = document.getElementById('showers').value;
+  var bath = document.getElementById('baths').value;
+  var water = document.getElementById('glasses').value;
+  var laundry = document.getElementById('laundry').value;
+  var dish = document.getElementById('dishes').value;
+  var gallons = calculateWeeklyUsageGallons (flushes, shower, bath, water, laundry, dish);
+  var litres = calculateWeeklyUsageLitres (flushes, shower, bath, water, laundry, dish);
+  var africa = compareToAfrica(calculateWeeklyUsageGallons (flushes, shower, bath, water, laundry, dish));
+  console.log (africa);
+  document.getElementById("gallons").innerHTML="<p> Your usage of water in gallons in a week is: "+gallons+" gallons. </p>";
+  document.getElementById("litres").innerHTML="<p> Your usage of water in litres in a week is: "+litres+" litres. </p>";
+  document.getElementById("africa").innerHTML="<p> Your usage of of water in average Africans a day is "+africa+" average Africans a day. </p>";
 }

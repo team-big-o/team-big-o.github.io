@@ -1,5 +1,5 @@
 window.onload = function(){
-    document.getElementById("burger").addEventListener( 'click', changeClass);
+    document.getElementById("burger").addEventListener('click', changeClass);
 }
 
 function changeClass() {
