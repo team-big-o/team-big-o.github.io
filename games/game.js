@@ -9,6 +9,7 @@ var playerYVelocity;
 var boss;
 var playerHP = 100;
 var bossHP = 500;
+let trees = [];
 
 function setup()
 {
@@ -22,6 +23,32 @@ function setup()
   bossBullet.size = 15;
   bossBullet.speed = 15;
   boss = new Boss();
+  for(var i = 0; i < 10; i++)
+  {
+    trees[i] = new Tree();
+    trees[i].y = 500;
+    trees[i].scale = 1;
+  }
+  trees[1].scale = 1;
+  trees[1].x = 50;
+  trees[0].scale = 0.7;
+  trees[0].x = 65;
+  trees[4].scale = 1.2;
+  trees[4].x = 202;
+  trees[3].scale = 0.6;
+  trees[3].x = 225;
+  trees[3].y = 497;
+  trees[2].scale = 0.75;
+  trees[2].x = 255;
+  trees[2].y = 497;
+  trees[5].x = 450;
+  trees[5].y = 510;
+  trees[6].x = 724;
+  trees[7].scale = 1.2;
+  trees[7].x = 1018;
+  trees[8].x = 1040;
+  trees[9].scale = 0.9;
+  trees[9].x = 1234;
 }
 
 function draw()
@@ -49,8 +76,8 @@ function draw()
   textAlign(RIGHT);
   textSize(10);
   strokeWeight(2);
-  /*text("FPS: " + parseInt(fps), width - 25, 200);
-  text("PlayerPos: " + player1.x + ", " + player1.y, width - 25, 50);
+  text("FPS: " + parseInt(fps), width - 25, 75);
+  /*text("PlayerPos: " + player1.x + ", " + player1.y, width - 25, 50);
   text("PlayerBulletPos: " + parseInt(playerBullet.x) + ", " + parseInt(playerBullet.y), width - 25, 80);
   text("BossBulletPos: " + parseInt(bossBullet.x) + ", " + parseInt(bossBullet.y), width - 25, 110);
   text("MousePos: " + mouseX + ", " + mouseY, width - 25, 140);
@@ -67,7 +94,11 @@ function draw()
   quad(366, 497, 359, 518, 263, 541, 200, 497);
 
   //trees
-
+  for(var i in trees)
+  {
+    trees[i].draw();
+  }
+  stroke(0, 0, 0);
 
   strokeWeight(10);
 
@@ -175,22 +206,25 @@ function draw()
   bossBullet.draw();
   boss.draw();
 
+
   if(bossHP <= 0)
   {
     background(100, 200, 55);
     fill(200, 100, 55);
+    textSize(25);
     text("yay", width/2, height/2);
+    textSize(15);
     text("press r to reset", width/2, height-100);
   }
   else if(playerHP <= 0)
   {
     background(200, 100, 55);
     fill(100, 200, 55);
+    textSize(25);
     text("womp womp", width/2, height/2);
+    textSize(15);
     text("press r to reset", width/2, height-100);
   }
-
-
 }
 
 function keyPressed()
