@@ -1,5 +1,5 @@
-document.onload = function(){
-  document.getElementById("calc-submit").addEventListener('click', updateAnswer());
+window.onload = function(){
+  document.getElementById("calc-submit").addEventListener('click', updateAnswer);
 }
 /*Calculate daily water usage in gallons given:
 Toilet flushes in a day (1.5 gallon times flushes)
@@ -32,7 +32,7 @@ function compareToAfrica(weeklyUsageGallons) {
   return weeklyUsageGallons / (9.246051*7);
 }
 
-function updateAnswer () {
+function updateAnswer() {
   var flushes = document.getElementById('toilets').value;
   var shower = document.getElementById('showers').value;
   var bath = document.getElementById('baths').value;
@@ -45,5 +45,5 @@ function updateAnswer () {
   console.log (africa);
   document.getElementById("gallons").innerHTML="<p> Your usage of water in gallons in a week is: "+gallons+" gallons. </p>";
   document.getElementById("litres").innerHTML="<p> Your usage of water in litres in a week is: "+litres+" litres. </p>";
-  document.getElementById("africa").innerHTML="<p> Your usage of of water in average Africans a day is "+africa+" average Africans a day. </p>";
+  document.getElementById("africa").innerHTML="<p> You use "+africa+" times the water an average African uses in a day! Access to clean water is something we shouldn't take for granted, so it's important to keep our lakes clean!</p>";
 }
