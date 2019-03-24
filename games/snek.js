@@ -80,7 +80,9 @@ $(() => {
 		// if touching food
 		if (points[0][0] === food[0] && points[0][1] === food[1]) {
 			to_add += 3;
-			food = [rand(0, 49), rand(0, 49)];
+			do {
+				food = [rand(0, 49), rand(0, 49)];
+			} while (water.includes(food));
 		}
 		// draw the food and river
 		context.fillStyle = 'rgb(128, 128, 0)';
