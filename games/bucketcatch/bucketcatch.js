@@ -3,8 +3,9 @@ var dropItems = [];
 var myScore;
 var score = 0;
 
+
 function startGame() {
-	myGamePiece = new component(30, 30, "blue", 10, 235, true);
+	myGamePiece = new component(30, 30, "blue", 64, 128, "blue", true);
 	myGamePiece.gravity = 0.05;
 	myScore = new component("30px", "Consolas", "black", 280, 40, "text", true);
 	myGameArea.start();
@@ -29,6 +30,23 @@ function startGame() {
 		}
 	};
 }
+
+function imageReturn (type){
+	if (type == "green"){
+		var img1 = document.createElement('img');
+		img1.src = '../../assets/images/raindrop-good-small.png';
+		return img1;
+	} else if (type == "red"){
+		var img2 = document.createElement('img');
+		img2.src = '../../assets/images/raindrop-bad-small.png';
+		return img2;
+	} else if (type == "blue"){
+		var img3 = document.createElement('img');
+		img3.src = '../../assets/images/bucket-man.png';
+		return img3;
+	}
+}
+
 
 var myGameArea = {
 	canvas: document.createElement("canvas"),
@@ -63,6 +81,15 @@ function component(width, height, color, x, y, type, good) {
 			ctx.font = this.width + " " + this.height;
 			ctx.fillStyle = color;
 			ctx.fillText(this.text, this.x, this.y);
+		} else if (this.type == "green") {
+			var imgGood = imageReturn (this.type);
+			ctx.drawImage (imgGood, this.x, this.y, 60, 60);
+		} else if (this.type == "red") {
+			var imgBad = imageReturn (this.type);
+			ctx.drawImage (imgBad, this.x, this.y, 60, 60);
+		} else if (this.type == "blue") {
+			var imgMan = imageReturn (this.type);
+			ctx.drawImage (imgMan, this.x, this.y, 64, 128);
 		} else {
 			ctx.fillStyle = color;
 			ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -134,9 +161,9 @@ function updateGameArea() {
 
 		var rand = Math.floor(Math.random() * 100) + 1;
 		if (rand <= 75){
-				dropItems.push(new component(20, 20, "green", spawnX, 0, "", true));
+				dropItems.push(new component(20, 20, "green", spawnX, 0, "green", true));
 		} else {
-				dropItems.push(new component(20, 20, "red", spawnX, 0, "", false));
+				dropItems.push(new component(20, 20, "red", spawnX, 0, "red", false));
 		}
 
 	}
