@@ -4,6 +4,9 @@
   "description": "a package for bulma specifics for the website",
   "main": "assets/sass/mystyles.scss",
   "scripts": {
+    "css-build": "node-sass --omit-source-map-url assets/sass/mystyles.scss assets/css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
   },
   "repository": {
     "type": "git",
@@ -22,14 +25,11 @@
     "url": "https://github.com/team-big-o/team-big-o.github.io/issues"
   },
   "homepage": "https://github.com/team-big-o/team-big-o.github.io#readme",
-  "dependencies": {},
+  "dependencies": {
+    "aos": "^2.3.4"
+  },
   "devDependencies": {
     "bulma": "^0.7.4",
     "node-sass": "^4.11.0"
-  },
-  "scripts": {
-  "css-build": "node-sass --omit-source-map-url assets/sass/mystyles.scss assets/css/mystyles.css",
-  "css-watch": "npm run css-build -- --watch",
-  "start": "npm run css-watch"
   }
 }

@@ -38,6 +38,10 @@
     margin-bottom: 1.5%;
 }
 
+.header {
+    font-family: url('https://fonts.googleapis.com/css?family=Archivo:400,700');
+}
+
 #pad{
     padding-right:1%;
     padding-left:1%;
