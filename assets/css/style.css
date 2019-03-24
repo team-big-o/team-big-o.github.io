@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
     background-attachment: fixed;
@@ -31,24 +32,45 @@
     .mobileShow {display: inline;}
 }
 
+.column{
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+
+.header {
+    font-family: 'Raleway';
+    font-size: 16rem;
+    color: white;
+}
+
+#pad{
+    padding-right:1%;
+    padding-left:1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
 #page1 {
     background-color: cyan;
 }
 
 #page2 {
-    background-color: red;
+    background-color: #ff3860;
+}
+
+#page2 .white {
+    color: white;
 }
 
 #page3 {
-    background-color: goldenrod;
+    background-color: #008080;
 }
 
 #page4 {
     background-color: purple;
-}
-
-#page4 {
-    background-color: bisque;
 }
 
 /* Second image*/
