@@ -73,7 +73,7 @@ $(() => {
 			context.fillRect(point[0] * 10, point[1] * 10, 10, 10);
 			// if touching self
 			if (i > 0 && point[0] === points[0][0] && point[1] === points[0][1]) {
-				alert('dead!');
+				alert('You\'re dead!');
 				reset();
 			}
 		}
@@ -87,7 +87,7 @@ $(() => {
 			w[0] = mod(w[0], 50);
 			w[1] = mod(w[1], 50);
 			if (points[0][0] === w[0] && points[0][1] === w[1]) {
-				alert('dead!');
+				alert('You\'re dead!');
 				reset();
 			}
 			context.fillStyle = "cyan";
