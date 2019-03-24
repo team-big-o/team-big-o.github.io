@@ -16,6 +16,7 @@ $(function() {
 		console.log(this);
 		scrollto.push($(this).offset().top);
 	});
+	if (scrollto[0] !== 0) scrolto.push(0);
 	let scrolling = false;
 	$(window).on('mousewheel', event => {
 		if (!scrolling) {
