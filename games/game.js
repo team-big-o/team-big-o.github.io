@@ -49,8 +49,8 @@ function draw()
   textAlign(RIGHT);
   textSize(10);
   strokeWeight(2);
-  text("FPS: " + parseInt(fps), width - 25, 200);
-  /*text("PlayerPos: " + player1.x + ", " + player1.y, width - 25, 50);
+  /*text("FPS: " + parseInt(fps), width - 25, 200);
+  text("PlayerPos: " + player1.x + ", " + player1.y, width - 25, 50);
   text("PlayerBulletPos: " + parseInt(playerBullet.x) + ", " + parseInt(playerBullet.y), width - 25, 80);
   text("BossBulletPos: " + parseInt(bossBullet.x) + ", " + parseInt(bossBullet.y), width - 25, 110);
   text("MousePos: " + mouseX + ", " + mouseY, width - 25, 140);
@@ -67,7 +67,7 @@ function draw()
   quad(366, 497, 359, 518, 263, 541, 200, 497);
 
   //trees
-  
+
 
   strokeWeight(10);
 
@@ -174,6 +174,23 @@ function draw()
   fill(128, 128, 0);
   bossBullet.draw();
   boss.draw();
+
+  if(bossHP <= 0)
+  {
+    background(100, 200, 55);
+    fill(200, 100, 55);
+    text("yay", width/2, height/2);
+    text("press r to reset", width/2, height-100);
+  }
+  else if(playerHP <= 0)
+  {
+    background(200, 100, 55);
+    fill(100, 200, 55);
+    text("womp womp", width/2, height/2);
+    text("press r to reset", width/2, height-100);
+  }
+
+
 }
 
 function keyPressed()
@@ -221,6 +238,15 @@ function keyPressed()
       bossBullet.y = boss.y;
       bossBullet.direction = -boss.rotation - QUARTER_PI*3/2;
     }
+  }
+  else if(keyIsDown(82))
+  {
+    //reset
+    playerHP = 100;
+    bossHP = 500;
+    player1.x = 100;
+    player1.y = 250;
+    boss.y = 250;
   }
 }
 
