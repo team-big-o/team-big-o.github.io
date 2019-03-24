@@ -1,0 +1,35 @@
+{
+  "name": "big-o",
+  "version": "1.0.0",
+  "description": "a package for bulma specifics for the website",
+  "main": "assets/sass/mystyles.scss",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-big-o/team-big-o.github.io.git"
+  },
+  "keywords": [
+    "bulma",
+    "website",
+    "big-o",
+    "water",
+    "lake-erie"
+  ],
+  "author": "akira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/team-big-o/team-big-o.github.io/issues"
+  },
+  "homepage": "https://github.com/team-big-o/team-big-o.github.io#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "bulma": "^0.7.4",
+    "node-sass": "^4.11.0"
+  },
+  "scripts": {
+  "css-build": "node-sass --omit-source-map-url assets/sass/mystyles.scss assets/css/mystyles.css",
+  "css-watch": "npm run css-build -- --watch",
+  "start": "npm run css-watch"
+  }
+}
