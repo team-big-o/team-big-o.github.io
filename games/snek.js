@@ -82,9 +82,9 @@ $(() => {
 			to_add += 3;
 			food = [rand(0, 49), rand(0, 49)];
 		}
-		do {
+		while (water.includes(food)) {
 			food = [rand(0, 49), rand(0, 49)];
-		} while (water.includes(food));
+		}
 		// draw the food and river
 		for (let w of water) {
 			w[0] = mod(w[0], 50);
