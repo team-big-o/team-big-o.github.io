@@ -15,7 +15,14 @@ function Player()
 
   this.draw = function()
   {
-    this.x += this.xVelocity;
+    if(this.xVelocity > 0 && this.x < width)
+    {
+      this.x += this.xVelocity;
+    }
+    else if(this.xVelocity < 0 && this.x > 0)
+    {
+      this.x += this.xVelocity;
+    }
     this.y += this.yVelocity;
     this.knee1X = this.x + this.femurLength * sin(this.leg1Rotation);
     this.knee1Y = this.y + this.femurLength * cos(this.leg1Rotation);

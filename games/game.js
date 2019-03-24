@@ -23,7 +23,7 @@ function setup()
   bossBullet.size = 15;
   bossBullet.speed = 15;
   boss = new Boss();
-  for(var i = 0; i < 10; i++)
+  for(var i = 0; i < 13; i++)
   {
     trees[i] = new Tree();
     trees[i].y = 500;
@@ -49,6 +49,15 @@ function setup()
   trees[8].x = 1040;
   trees[9].scale = 0.9;
   trees[9].x = 1234;
+  trees[10].scale = 3;
+  trees[10].x = 100;
+  trees[10].y = height;
+  trees[11].scale = 3.5;
+  trees[11].x = 550;
+  trees[11].y = height;
+  trees[12].scale = 2;
+  trees[12].x = width;
+  trees[12].y = height;
 }
 
 function draw()
@@ -94,7 +103,7 @@ function draw()
   quad(366, 497, 359, 518, 263, 541, 200, 497);
 
   //trees
-  for(var i in trees)
+  for(var i = 0; i < 10; i++)
   {
     trees[i].draw();
   }
@@ -206,6 +215,10 @@ function draw()
   bossBullet.draw();
   boss.draw();
 
+  //draw foreground trees
+  trees[10].draw();
+  trees[11].draw();
+  trees[12].draw();
 
   if(bossHP <= 0)
   {
@@ -252,12 +265,12 @@ function keyPressed()
   }
   else if(keyIsDown(RIGHT_ARROW))
   {
+    player1.xVelocity = 5;
     animTimer = 0;
     player1.leg1Rotation = QUARTER_PI;
     player1.leg2Rotation = -QUARTER_PI/2;
     player1.knee1Rotation = 0;
     player1.knee2Rotation = -QUARTER_PI;
-    player1.xVelocity = 5;
   }
   else if(keyIsDown(DOWN_ARROW))
   {
