@@ -1,5 +1,4 @@
-
-window.onload = function(){
+document.onload = function(){
   document.getElementById("calc-submit").addEventListener('click', updateAnswer());
 }
 /*Calculate daily water usage in gallons given:
