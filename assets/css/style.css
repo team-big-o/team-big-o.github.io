@@ -16,10 +16,11 @@
 /* First image (Landing. Full height) */
 .bgimg-1 {
     background-image: url("../../assets/images/background.jpg");
-    min-height: 680px;
     min-width: 1920px;
+    min-height: 783px;
     opacity: 0.75;
     position: relative;
+    margin: 0px;
 }
 
 .mobileShow { display: none;}
