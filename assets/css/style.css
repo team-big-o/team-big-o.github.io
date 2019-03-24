@@ -42,8 +42,22 @@
 
 .header {
     font-family: 'Raleway';
-    font-size: 16rem;
-    color: white;
+    font-size: 10rem;
+    color: #000000;
+    margin-left:-20%
+}
+
+.subheader {
+    font-family: 'Raleway';
+    font-size: 3rem;
+    color: #000000;
+    margin-left:-20%
+}
+
+.game{
+   min-height: 100;
+   padding-top: 3%;
+
 }
 
 #pad{
@@ -62,6 +76,10 @@
 }
 
 #page2 .white {
+    color: white;
+}
+
+#page4 .purple {
     color: white;
 }
 
