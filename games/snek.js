@@ -80,13 +80,12 @@ $(() => {
 		// if touching food
 		if (points[0][0] === food[0] && points[0][1] === food[1]) {
 			to_add += 3;
-			do {
-				food = [rand(0, 49), rand(0, 49)];
-			} while (water.includes(food));
+			food = [rand(0, 49), rand(0, 49)];
 		}
+		do {
+			food = [rand(0, 49), rand(0, 49)];
+		} while (water.includes(food));
 		// draw the food and river
-		context.fillStyle = 'rgb(128, 128, 0)';
-		context.fillRect(food[0] * 10, food[1] * 10, 10, 10);
 		for (let w of water) {
 			w[0] = mod(w[0], 50);
 			w[1] = mod(w[1], 50);
@@ -100,6 +99,9 @@ $(() => {
 		let temp = water[rand(0, water.length - 1)];
 		let ty = rand(-1, 1), tx = rand(-1, 1);
 		water.push([temp[0] + tx, temp[1] + ty]);
+
+		context.fillStyle = 'rgb(128, 128, 0)';
+		context.fillRect(food[0] * 10, food[1] * 10, 10, 10);
 	}
 	reset();
 	setInterval(() => window.requestAnimationFrame(render), 100);
