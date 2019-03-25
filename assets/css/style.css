@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
     background-attachment: fixed;
@@ -13,10 +14,15 @@
         background-attachment: scroll;
         background-repeat: repeat;
     }
+
+    html, body{
+        width: 100%;
+        overflow-x: hidden;
+    }
 }
 
 /* First image (Landing. Full height) */
-.bgimg-1 {
+.bgimg-1, .bgimg-2, .bgimg-3 {
     background-image: url("../../assets/images/background.jpg");
     opacity: 0.75;
     position: relative;
@@ -31,13 +37,17 @@
     .mobileShow {display: inline;}
 }
 
-.column{
+.profile{
     margin-right: 1%;
     margin-left: 1%;
-    margin-top: 1.5%;
+    margin-top: 3%;
     margin-bottom: 1.5%;
+    /*margin: auto;*/
 }
 
+.fa-arrow-down{
+    size: 100rem;
+}
 
 .header {
     font-family: 'Raleway';
@@ -53,7 +63,7 @@
     margin-left:-20%
 }
 
-/* Turn off parallax scrolling for tablets and phones */
+/* Change headers for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
     .header {
         font-family: 'Raleway';
@@ -138,15 +148,3 @@
 #page4 {
     background-color: purple;
 }
-
-/* Second image*/
-/*.bgimg-2 {
-    background-image: url("/CNCT_spoof/images/background.jpg");
-    min-height: 400px;
-}*/
-
-/* Third image*/
-/*.bgimg-3 {
-    background-image: url("/CNCT_spoof/images/e_commerce.jpg");
-    min-height: 400px;
-}*/

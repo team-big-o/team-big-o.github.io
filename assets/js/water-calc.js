@@ -1,5 +1,6 @@
 window.onload = function(){
   document.getElementById("calc-submit").addEventListener('click', updateAnswer);
+  document.getElementById("burger").addEventListener('click', changeClass);
 }
 /*Calculate daily water usage in gallons given:
 Toilet flushes in a day (1.5 gallon times flushes)
@@ -46,4 +47,14 @@ function updateAnswer() {
   document.getElementById("gallons").innerHTML="<p> Your usage of water in gallons in a week is: "+gallons+" gallons. </p>";
   document.getElementById("litres").innerHTML="<p> Your usage of water in litres in a week is: "+litres+" litres. </p>";
   document.getElementById("africa").innerHTML="<p> You use "+africa+" times the water an average African uses in a day! Access to clean water is something we shouldn't take for granted, so it's important to keep our lakes clean!</p>";
+}
+
+function changeClass() {
+  if (document.getElementById("burger").className.match(/(?:^|\s)is-active(?!\S)/)){
+      document.getElementById("burger").className = document.getElementById("burger").className.replace(/(?:^|\s)is-active(?!\S)/g , '' );
+      document.getElementById("navbarContent").className = document.getElementById("navbarContent").className.replace(/(?:^|\s)is-active(?!\S)/g , '' );
+  } else {
+      document.getElementById("burger").className += " is-active";
+      document.getElementById("navbarContent").className += " is-active";
+  }
 }
